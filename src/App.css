@@ -1,38 +1,106 @@
-.App {
-  text-align: center;
+:root {
+  --primary-color: #3498db;
+  --secondary-color: #2ecc71;
+  --background-color: #f4f4f4;
+  --text-color: #333;
+  --card-background: #ffffff;
+  --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  --update-bg: #ffffff;
+  --update-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  --update-border: #ddd;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body {
+  background-color: var(--background-color);
+  color: var(--text-color);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.card {
+  background-color: var(--card-background);
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: var(--shadow);
+  transition: transform 0.3s ease;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+.card:hover {
+  transform: translateY(-5px);
+}
+
+button {
+  padding: 0.5rem 1rem;
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: var(--secondary-color);
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+}
+
+th, td {
+  padding: 0.5rem;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+th {
+  background-color: var(--primary-color);
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+/* Styles for Company Updates & Announcements */
+.update-card {
+  background-color: var(--update-bg);
+  padding: 1rem;
+  border-radius: 8px;
+  box-shadow: var(--update-shadow);
+  border: 1px solid var(--update-border);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.update-card h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.update-card p {
+  color: var(--text-color);
+  margin-bottom: 0.5rem;
+}
+
+.update-card .date {
+  color: #6b7280;
+  font-size: 0.875rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .dashboard, .task-module, .location-module {
+      grid-template-columns: 1fr;
   }
-  to {
-    transform: rotate(360deg);
+  
+  nav ul {
+      flex-direction: column;
+      align-items: center;
+  }
+  
+  nav ul li {
+      margin-bottom: 0.5rem;
+  }
+  
+  .update-card {
+      margin-bottom: 1rem;
   }
 }
+
+
